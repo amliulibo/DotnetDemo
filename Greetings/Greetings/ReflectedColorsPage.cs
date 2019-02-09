@@ -30,6 +30,8 @@ namespace Greetings
             //    }
             //}
 
+
+
             foreach (PropertyInfo prop in typeof(Color).GetRuntimeProperties())
             {
                 MethodInfo methodInfo = prop.GetMethod;
@@ -37,6 +39,7 @@ namespace Greetings
                 {
                     stackLayout.Children.Add(CreateColorLabel((Color)prop.GetValue(null), prop.Name));
                 }
+
             }
 
             this.Padding = new Thickness(5, Device.OnPlatform(20, 5, 5), 5, 5);
